@@ -45,6 +45,10 @@ qt_add_qml_module(apptaskPlanning
         SOURCES controller/IShowFamilyUnit.hpp
         SOURCES controller/ShowFamilyUnit.hpp controller/ShowFamilyUnit.cpp
         SOURCES model/signal/AddedFamilyUnit.hpp model/signal/AddedFamilyUnit.cpp
+        SOURCES controller/signal/AddedFamilyUnit.hpp controller/signal/AddedFamilyUnit.cpp
+        SOURCES view/SelectFamilyUnit.hpp view/SelectFamilyUnit.cpp
+        SOURCES controller/ISelectFamilyUnit.hpp
+        SOURCES controller/SelectFamilyUnit.hpp controller/SelectFamilyUnit.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

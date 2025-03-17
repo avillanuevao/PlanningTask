@@ -1,6 +1,6 @@
 #include "AddedFamilyUnit.hpp"
 
-namespace model {
+namespace controller {
 namespace signal {
 
 AddedFamilyUnit::AddedFamilyUnit(std::string nameFamilyUnit):
@@ -12,4 +12,4 @@ std::string AddedFamilyUnit::getNameFamilyUnit() const
 }
 
 } // namespace signal
-} // namespace model
+} // namespace controller

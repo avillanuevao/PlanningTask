@@ -2,7 +2,7 @@
 
 #include <string>
 
-namespace model {
+namespace controller {
 namespace signal {
 
 class AddedFamilyUnit
@@ -17,5 +17,4 @@ private:
 };
 
 } // namespace signal
-} // namespace model
-
+} // namespace controller

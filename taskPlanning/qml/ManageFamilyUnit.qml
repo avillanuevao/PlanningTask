@@ -15,7 +15,7 @@ RowLayout
             model: showFamilyUnit.familiesUnits
 
             onActivated: {
-                console.log("Seleccionado:", currentText)
+                selectFamilyUnit.selectFamilyUnit(currentText);
             }
         }
 
