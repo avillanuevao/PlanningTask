@@ -17,7 +17,7 @@ qt_add_qml_module(apptaskPlanning
     VERSION 1.0
     QML_FILES
         Main.qml
-        SOURCES view/IRegisterFamilyUnit.hpp
+        SOURCES
         SOURCES controller/IRegisterFamilyUnit.hpp
         SOURCES view/RegisterFamilyUnit.hpp view/RegisterFamilyUnit.cpp
         SOURCES controller/RegisterFamilyUnit.hpp controller/RegisterFamilyUnit.cpp
@@ -49,6 +49,10 @@ qt_add_qml_module(apptaskPlanning
         SOURCES view/SelectFamilyUnit.hpp view/SelectFamilyUnit.cpp
         SOURCES controller/ISelectFamilyUnit.hpp
         SOURCES controller/SelectFamilyUnit.hpp controller/SelectFamilyUnit.cpp
+        SOURCES view/AddUser.hpp view/AddUser.cpp
+        SOURCES
+        SOURCES controller/IAddUser.hpp
+        SOURCES controller/AddUser.hpp controller/AddUser.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

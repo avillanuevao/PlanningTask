@@ -2,6 +2,8 @@
 
 namespace model {
 
-User::User() {}
+User::User(std::string name)
+    : mName(name)
+{}
 
 } // namespace model

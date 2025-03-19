@@ -2,14 +2,14 @@
 
 #include <string>
 
-namespace model {
+namespace controller {
 
-class IUsers
+class IAddUser
 {
 public:
-    IUsers() = default;
+    IAddUser() = default;
 
     virtual void addUser(std::string nameUser) = 0;
 };
 
-} // namespace model
+} // namespace controller

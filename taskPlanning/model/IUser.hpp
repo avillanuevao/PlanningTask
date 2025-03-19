@@ -1,14 +1,12 @@
-#ifndef IUSER_HPP
-#define IUSER_HPP
+#pragma once
 
 namespace model {
 
 class IUser
 {
 public:
-    IUser();
+    IUser() = default;
 };
 
 } // namespace model
 
-#endif // IUSER_HPP

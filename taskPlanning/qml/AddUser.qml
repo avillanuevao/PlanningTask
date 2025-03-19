@@ -21,6 +21,7 @@ ColumnLayout
         onClicked:
         {
             console.log(addUserTextField.text)
+            addUser.addUser(addUserTextField.text)
         }
     }
 
