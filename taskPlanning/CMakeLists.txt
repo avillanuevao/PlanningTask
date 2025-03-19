@@ -6,6 +6,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
 
+file(GLOB_RECURSE SOURCES
+    "controller/*.cpp" "controller/*.hpp"
+    "model/*.cpp" "model/*.hpp"
+    "view/*.cpp" "view/*.hpp"
+    "utils/*.cpp" "utils/*.hpp"
+)
+
 qt_standard_project_setup()
 
 qt_add_executable(apptaskPlanning
@@ -17,47 +24,13 @@ qt_add_qml_module(apptaskPlanning
     VERSION 1.0
     QML_FILES
         Main.qml
-        SOURCES
-        SOURCES controller/IRegisterFamilyUnit.hpp
-        SOURCES view/RegisterFamilyUnit.hpp view/RegisterFamilyUnit.cpp
-        SOURCES controller/RegisterFamilyUnit.hpp controller/RegisterFamilyUnit.cpp
-        SOURCES model/IFamiliesUnits.hpp
-        SOURCES model/FamiliesUnits.hpp model/FamiliesUnits.cpp
-        SOURCES model/IFamilyUnit.hpp
-        SOURCES model/FamilyUnit.hpp model/FamilyUnit.cpp
-        SOURCES model/ITasks.hpp
-        SOURCES model/Tasks.hpp model/Tasks.cpp
-        SOURCES model/IUsers.hpp
-        SOURCES model/Users.hpp model/Users.cpp
-        SOURCES model/ITask.hpp
-        SOURCES model/Task.hpp model/Task.cpp
-        SOURCES model/IUser.hpp
-        SOURCES model/User.hpp model/User.cpp
         QML_FILES qml/AddFamilyUnit.qml
         QML_FILES qml/AddUser.qml
         QML_FILES qml/AddTask.qml
         QML_FILES qml/Operations.qml
         QML_FILES qml/AssignTask.qml
         QML_FILES qml/ManageFamilyUnit.qml
-        SOURCES view/ShowFamilyUnit.hpp view/ShowFamilyUnit.cpp
-        SOURCES utils/Publisher.hpp
-        SOURCES utils/Subscriber.hpp
-        SOURCES controller/IShowFamilyUnit.hpp
-        SOURCES controller/ShowFamilyUnit.hpp controller/ShowFamilyUnit.cpp
-        SOURCES model/signal/AddedFamilyUnit.hpp model/signal/AddedFamilyUnit.cpp
-        SOURCES controller/signal/AddedFamilyUnit.hpp controller/signal/AddedFamilyUnit.cpp
-        SOURCES view/SelectFamilyUnit.hpp view/SelectFamilyUnit.cpp
-        SOURCES controller/ISelectFamilyUnit.hpp
-        SOURCES controller/SelectFamilyUnit.hpp controller/SelectFamilyUnit.cpp
-        SOURCES view/AddUser.hpp view/AddUser.cpp
-        SOURCES
-        SOURCES controller/IAddUser.hpp
-        SOURCES controller/AddUser.hpp controller/AddUser.cpp
-        SOURCES model/signal/AddedUser.hpp model/signal/AddedUser.cpp
-        SOURCES controller/signal/AddedUser.hpp controller/signal/AddedUser.cpp
-        SOURCES controller/IShowUser.hpp
-        SOURCES controller/ShowUser.hpp controller/ShowUser.cpp
-        SOURCES view/ShowUser.hpp view/ShowUser.cpp
+        SOURCES ${SOURCES}
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

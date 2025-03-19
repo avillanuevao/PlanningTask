@@ -10,17 +10,17 @@
 #include <model/signal/AddedFamilyUnit.hpp>
 #include <model/signal/AddedUser.hpp>
 
-#include <controller/RegisterFamilyUnit.hpp>
-#include <controller/ShowFamilyUnit.hpp>
-#include <controller/SelectFamilyUnit.hpp>
-#include <controller/AddUser.hpp>
-#include <controller/ShowUser.hpp>
+#include <controller/operation/RegisterFamilyUnit.hpp>
+#include <controller/operation/SelectFamilyUnit.hpp>
+#include <controller/operation/AddUser.hpp>
+#include <controller/visualization/ShowFamilyUnit.hpp>
+#include <controller/visualization/ShowUser.hpp>
 
-#include <view/RegisterFamilyUnit.hpp>
-#include <view/ShowFamilyUnit.hpp>
-#include <view/SelectFamilyUnit.hpp>
-#include <view/AddUser.hpp>
-#include <view/ShowUser.hpp>
+#include <view/operation/RegisterFamilyUnit.hpp>
+#include <view/operation/SelectFamilyUnit.hpp>
+#include <view/operation/AddUser.hpp>
+#include <view/visualization/ShowFamilyUnit.hpp>
+#include <view/visualization/ShowUser.hpp>
 
 
 int main(int argc, char *argv[])
@@ -33,32 +33,32 @@ int main(int argc, char *argv[])
     std::shared_ptr<model::Users> mModelUsers
         = std::make_shared<model::Users>();
 
-    std::unique_ptr<controller::RegisterFamilyUnit> mControllerRegisterFamilyUnit
-        = std::make_unique<controller::RegisterFamilyUnit>(mModelFamiliesUnits);
-    std::unique_ptr<controller::SelectFamilyUnit> mControllerSelectFamilyUnit
-        = std::make_unique<controller::SelectFamilyUnit>(mModelFamiliesUnits);
-    std::unique_ptr<controller::AddUser> mControllerAddUser
-        = std::make_unique<controller::AddUser>(mModelUsers);
+    std::unique_ptr<controller::operation::RegisterFamilyUnit> mControllerRegisterFamilyUnit
+        = std::make_unique<controller::operation::RegisterFamilyUnit>(mModelFamiliesUnits);
+    std::unique_ptr<controller::operation::SelectFamilyUnit> mControllerSelectFamilyUnit
+        = std::make_unique<controller::operation::SelectFamilyUnit>(mModelFamiliesUnits);
+    std::unique_ptr<controller::operation::AddUser> mControllerAddUser
+        = std::make_unique<controller::operation::AddUser>(mModelUsers);
 
-    std::shared_ptr<controller::ShowFamilyUnit> mControllerShowFamilyUnit
-        = std::make_shared<controller::ShowFamilyUnit>();
-    std::shared_ptr<controller::ShowUser> mControllerShowUser
-        = std::make_shared<controller::ShowUser>();
+    std::shared_ptr<controller::visualization::ShowFamilyUnit> mControllerShowFamilyUnit
+        = std::make_shared<controller::visualization::ShowFamilyUnit>();
+    std::shared_ptr<controller::visualization::ShowUser> mControllerShowUser
+        = std::make_shared<controller::visualization::ShowUser>();
 
     mModelFamiliesUnits->addSubscriber(mControllerShowFamilyUnit);
     mModelUsers->addSubscriber(mControllerShowUser);
 
-    std::shared_ptr<view::RegisterFamilyUnit> mViewRegisterFamilyUnit
-        = std::make_shared<view::RegisterFamilyUnit>(std::move(mControllerRegisterFamilyUnit));
-    std::shared_ptr<view::SelectFamilyUnit> mViewSelectFamilyUnit
-        = std::make_shared<view::SelectFamilyUnit>(std::move(mControllerSelectFamilyUnit));
-    std::shared_ptr<view::AddUser> mViewAddUser
-        = std::make_shared<view::AddUser>(std::move(mControllerAddUser));
+    std::shared_ptr<view::operation::RegisterFamilyUnit> mViewRegisterFamilyUnit
+        = std::make_shared<view::operation::RegisterFamilyUnit>(std::move(mControllerRegisterFamilyUnit));
+    std::shared_ptr<view::operation::SelectFamilyUnit> mViewSelectFamilyUnit
+        = std::make_shared<view::operation::SelectFamilyUnit>(std::move(mControllerSelectFamilyUnit));
+    std::shared_ptr<view::operation::AddUser> mViewAddUser
+        = std::make_shared<view::operation::AddUser>(std::move(mControllerAddUser));
 
-    std::shared_ptr<view::ShowFamilyUnit> mViewShowFamilyUnit
-        = std::make_shared<view::ShowFamilyUnit>(mControllerShowFamilyUnit);
-    std::shared_ptr<view::ShowUser> mViewShowUser
-        = std::make_shared<view::ShowUser>(mControllerShowUser);
+    std::shared_ptr<view::visualization::ShowFamilyUnit> mViewShowFamilyUnit
+        = std::make_shared<view::visualization::ShowFamilyUnit>(mControllerShowFamilyUnit);
+    std::shared_ptr<view::visualization::ShowUser> mViewShowUser
+        = std::make_shared<view::visualization::ShowUser>(mControllerShowUser);
 
     mControllerShowFamilyUnit->addSubscriber(mViewShowFamilyUnit);
     mControllerShowUser->addSubscriber(mViewShowUser);
