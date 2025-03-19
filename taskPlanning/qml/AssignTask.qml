@@ -10,7 +10,7 @@ ColumnLayout
     ComboBox
     {
         id: userBox
-        // model: myModel.items
+        model: showUser.users
 
         onActivated: {
             console.log("Seleccionado:", currentText)

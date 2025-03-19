@@ -53,6 +53,11 @@ qt_add_qml_module(apptaskPlanning
         SOURCES
         SOURCES controller/IAddUser.hpp
         SOURCES controller/AddUser.hpp controller/AddUser.cpp
+        SOURCES model/signal/AddedUser.hpp model/signal/AddedUser.cpp
+        SOURCES controller/signal/AddedUser.hpp controller/signal/AddedUser.cpp
+        SOURCES controller/IShowUser.hpp
+        SOURCES controller/ShowUser.hpp controller/ShowUser.cpp
+        SOURCES view/ShowUser.hpp view/ShowUser.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

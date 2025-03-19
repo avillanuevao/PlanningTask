@@ -2,9 +2,12 @@
 
 #include <string>
 
+#include <utils/Publisher.hpp>
+#include <model/signal/AddedUser.hpp>
+
 namespace model {
 
-class IUsers
+class IUsers : public utils::Publisher<model::signal::AddedUser>
 {
 public:
     IUsers() = default;
