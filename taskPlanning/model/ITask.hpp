@@ -1,14 +1,12 @@
-#ifndef ITASK_HPP
-#define ITASK_HPP
+#pragma once
 
 namespace model {
 
 class ITask
 {
 public:
-    ITask();
+    ITask() = default;
 };
 
 } // namespace model
 
-#endif // ITASK_HPP

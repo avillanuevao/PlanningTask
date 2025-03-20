@@ -19,7 +19,7 @@ ColumnLayout
         text: "RegisterTask"
         onClicked:
         {
-            console.log(addTaskTextField.text)
+            addTask.addTask(addTaskTextField.text)
         }
     }
 

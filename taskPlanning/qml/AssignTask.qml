@@ -20,7 +20,7 @@ ColumnLayout
     ComboBox
     {
         id: taskBox
-        // model: myModel.items
+        model: showTask.tasks
 
         onActivated: {
             console.log("Seleccionado:", currentText)

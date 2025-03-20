@@ -2,6 +2,8 @@
 
 namespace model {
 
-Task::Task() {}
+Task::Task(std::string name)
+    : mName(name)
+{}
 
 } // namespace model

@@ -1,14 +1,20 @@
-#ifndef TASK_HPP
-#define TASK_HPP
+#pragma once
+
+#include <string>
+
+#include <model/ITask.hpp>
 
 namespace model {
 
-class Task
+class Task : public model::ITask
 {
 public:
-    Task();
+    Task(std::string name);
+
+private:
+    std::string mName;
 };
 
 } // namespace model
 
-#endif // TASK_HPP
+
