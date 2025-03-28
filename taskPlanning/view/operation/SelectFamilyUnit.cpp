@@ -3,9 +3,9 @@
 namespace view {
 namespace operation {
 
-SelectFamilyUnit::SelectFamilyUnit(std::unique_ptr<controller::operation::ISelectFamilyUnit> controllerSelectFamilyUnit,
+SelectFamilyUnit::SelectFamilyUnit(std::shared_ptr<controller::operation::ISelectFamilyUnit> controllerSelectFamilyUnit,
                                    QObject *parent)
-    : mControllerSelectFamilyUnit(std::move(controllerSelectFamilyUnit))
+    : mControllerSelectFamilyUnit(controllerSelectFamilyUnit)
     , QObject(parent)
 {}
 

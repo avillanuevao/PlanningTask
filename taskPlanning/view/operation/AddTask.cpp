@@ -3,8 +3,8 @@
 namespace view {
 namespace operation {
 
-AddTask::AddTask(std::unique_ptr<controller::operation::IAddTask> controllerAddTask, QObject *parent)
-    : mControllerAddTask(std::move(controllerAddTask))
+AddTask::AddTask(std::shared_ptr<controller::operation::IAddTask> controllerAddTask, QObject *parent)
+    : mControllerAddTask(controllerAddTask)
     , QObject(parent)
 {
 

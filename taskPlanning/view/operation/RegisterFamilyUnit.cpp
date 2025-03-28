@@ -6,8 +6,8 @@ namespace view {
 namespace operation {
 
 RegisterFamilyUnit::RegisterFamilyUnit(
-    std::unique_ptr<controller::operation::IRegisterFamilyUnit> controllerRegisterFamilyUnit, QObject *parent)
-    : mControllerRegisterFamilyUnit(std::move(controllerRegisterFamilyUnit))
+    std::shared_ptr<controller::operation::IRegisterFamilyUnit> controllerRegisterFamilyUnit, QObject *parent)
+    : mControllerRegisterFamilyUnit(controllerRegisterFamilyUnit)
     , QObject(parent)
 {}
 

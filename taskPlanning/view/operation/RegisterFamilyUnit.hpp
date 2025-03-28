@@ -13,13 +13,13 @@ class RegisterFamilyUnit : public QObject
 {
     Q_OBJECT
 public:
-    RegisterFamilyUnit(std::unique_ptr<controller::operation::IRegisterFamilyUnit> controllerRegisterFamilyUnit,
+    RegisterFamilyUnit(std::shared_ptr<controller::operation::IRegisterFamilyUnit> controllerRegisterFamilyUnit,
                        QObject *parent = nullptr);
 
     Q_INVOKABLE void registerFamilyUnit(QString nameFamilyUnit);
 
 private:
-    std::unique_ptr<controller::operation::IRegisterFamilyUnit> mControllerRegisterFamilyUnit;
+    std::shared_ptr<controller::operation::IRegisterFamilyUnit> mControllerRegisterFamilyUnit;
 };
 
 } // namespace operation
