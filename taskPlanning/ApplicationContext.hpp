@@ -2,20 +2,20 @@
 
 #include <memory>
 
-#include <ViewVisualizationContext.hpp>
-#include <ViewOperationContext.hpp>
+#include <view/ViewVisualizationContext.hpp>
+#include <view/ViewOperationContext.hpp>
 
 class ApplicationContext
 {
 public:
     ApplicationContext();
 
-    std::shared_ptr<ViewVisualizationContext> getViewVisualizationContext() const;
+    std::shared_ptr<view::ViewVisualizationContext> getViewVisualizationContext() const;
 
-    std::shared_ptr<ViewOperationContext> getViewOperationContext() const;
+    std::shared_ptr<view::ViewOperationContext> getViewOperationContext() const;
 
 private:
-    std::shared_ptr<ViewVisualizationContext> mViewVisualizationContext;
-    std::shared_ptr<ViewOperationContext> mViewOperationContext;
+    std::shared_ptr<view::ViewVisualizationContext> mViewVisualizationContext;
+    std::shared_ptr<view::ViewOperationContext> mViewOperationContext;
 
 };

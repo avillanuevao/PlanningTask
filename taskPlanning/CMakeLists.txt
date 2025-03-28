@@ -33,12 +33,6 @@ qt_add_qml_module(apptaskPlanning
         SOURCES ${SOURCES}
         ApplicationContext.hpp
         ApplicationContext.cpp
-        ModelContext.hpp
-        ModelContext.cpp
-        SOURCES ControllerVisualizationContext.hpp ControllerVisualizationContext.cpp
-        SOURCES ViewVisualizationContext.hpp ViewVisualizationContext.cpp
-        SOURCES ControllerOperationContext.hpp ControllerOperationContext.cpp
-        SOURCES ViewOperationContext.hpp ViewOperationContext.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
