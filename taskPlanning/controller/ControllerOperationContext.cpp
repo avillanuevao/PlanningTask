@@ -34,7 +34,18 @@ void ControllerOperationContext::initOperationControllers()
     mControllerSelectFamilyUnit = std::make_shared<controller::operation::SelectFamilyUnit>(mModelContext->getModelFamiliesUnits());
     mControllerAddUser = std::make_shared<controller::operation::AddUser>(mModelContext->getModelUsers());
     mControllerAddTask = std::make_shared<controller::operation::AddTask>(mModelContext->getModelTasks());
+    mControllerSelectUser = std::make_shared<controller::operation::SelectUser>(mModelContext->getModelFamiliesUnits());
+    mControllerSelectTask = std::make_shared<controller::operation::SelectTask>(mModelContext->getModelFamiliesUnits());
+}
 
+std::shared_ptr<controller::operation::SelectTask> ControllerOperationContext::getControllerSelectTask() const
+{
+    return mControllerSelectTask;
+}
+
+std::shared_ptr<controller::operation::SelectUser> ControllerOperationContext::getControllerSelectUser() const
+{
+    return mControllerSelectUser;
 }
 
 } // namespace controller

@@ -15,7 +15,8 @@ RowLayout
             model: showFamilyUnit.familiesUnits
             visible: true
 
-            onCurrentTextChanged: {
+            onCurrentTextChanged:
+            {
                 selectFamilyUnit.selectFamilyUnit(currentText)
             }
         }

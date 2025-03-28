@@ -26,9 +26,23 @@ void FamiliesUnits::setFamilyUnitSelected(std::string familyUnitSelected)
     }
 }
 
+void FamiliesUnits::setUserSelected(std::string userSelected)
+{
+    std::shared_ptr<model::IFamilyUnit> familyUnitSelected = mFamiliesUnits[mFamilyUnitSelected];
+
+    familyUnitSelected->setUserSelected(userSelected);
+}
+
+void FamiliesUnits::setTaskSelected(std::string taskSelected)
+{
+    std::shared_ptr<model::IFamilyUnit> familyUnitSelected = mFamiliesUnits[mFamilyUnitSelected];
+
+    familyUnitSelected->setTaskSelected(taskSelected);
+}
+
 void model::FamiliesUnits::addFamilyUnit(std::string nameFamilyUnit)
 {
-    model::FamilyUnit newFamilyUnit = model::FamilyUnit(nameFamilyUnit);
+    std::shared_ptr<model::IFamilyUnit> newFamilyUnit = std::make_shared<model::FamilyUnit>(nameFamilyUnit);
 
     mFamiliesUnits[nameFamilyUnit] = newFamilyUnit;
 }

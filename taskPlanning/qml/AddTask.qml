@@ -20,8 +20,6 @@ ColumnLayout
         onClicked:
         {
             addTask.addTask(addTaskTextField.text)
-            Qt.application.isTaskFull = true
-
         }
     }
 

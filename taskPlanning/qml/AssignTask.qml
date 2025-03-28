@@ -13,7 +13,8 @@ ColumnLayout
         model: showUser.users
 
         onCurrentTextChanged: {
-            console.log("Seleccionado userBox:", currentText)
+            selectUser.selectUser(currentText)
+            Qt.application.isUserFull = true
         }
     }
 
@@ -23,7 +24,8 @@ ColumnLayout
         model: showTask.tasks
 
         onCurrentTextChanged: {
-            console.log("Seleccionado taskBox:", currentText)
+            selectTask.selectTask(currentText)
+            Qt.application.isTaskFull = true
         }
     }
 

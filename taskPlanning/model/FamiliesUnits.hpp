@@ -1,6 +1,7 @@
 #pragma once
 
 #include <map>
+#include <memory>
 
 #include <model/IFamiliesUnits.hpp>
 #include <model/IFamilyUnit.hpp>
@@ -14,12 +15,14 @@ public:
 
     void registerFamilyUnit(std::string nameFamilyUnit) override;
     void setFamilyUnitSelected(std::string familyUnitSelected) override;
+    void setUserSelected(std::string userSelected) override;
+    void setTaskSelected(std::string taskSelected) override;
 
 private:
     void addFamilyUnit(std::string nameFamilyUnit);
     void notifyAddedFamilyUnit(std::string nameFamilyUnit);
 
-    std::map<std::string, model::IFamilyUnit> mFamiliesUnits;
+    std::map<std::string, std::shared_ptr<model::IFamilyUnit>> mFamiliesUnits;
     std::string mFamilyUnitSelected;
 };
 

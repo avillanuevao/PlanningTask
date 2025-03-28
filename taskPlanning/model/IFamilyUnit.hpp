@@ -9,6 +9,12 @@ class IFamilyUnit
 {
 public:
     IFamilyUnit() = default;
+
+    virtual void setUserSelected(std::string userSelected) = 0;
+    virtual std::string getUserSelected() const = 0;
+    virtual void setTaskSelected(std::string taskSelected) = 0;
+    virtual std::string getTaskSelected() const = 0;
+
 };
 
 } // namespace model

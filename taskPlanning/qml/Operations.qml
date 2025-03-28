@@ -69,7 +69,7 @@ ColumnLayout
         text: "GoBack"
         onClicked:
         {
-            addFamilyUnitScreen.visible = true
+            manageFamilyUnitScreen.visible = true
             operationsScreen.visible = false
         }
     }

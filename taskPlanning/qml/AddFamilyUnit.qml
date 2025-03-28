@@ -18,7 +18,7 @@ RowLayout
         Button
         {
             id: addUserButton
-            text: "RegisterFamilyUnit"
+            text: "AddFamilyUnit"
             visible: true
             onClicked:
             {

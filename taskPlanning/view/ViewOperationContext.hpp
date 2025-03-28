@@ -5,6 +5,8 @@
 #include <view/operation/SelectFamilyUnit.hpp>
 #include <view/operation/AddUser.hpp>
 #include <view/operation/AddTask.hpp>
+#include <view/operation/SelectUser.hpp>
+#include <view/operation/SelectTask.hpp>
 
 namespace view {
 
@@ -18,6 +20,10 @@ public:
     std::shared_ptr<view::operation::AddUser> getViewAddUser() const;
     std::shared_ptr<view::operation::AddTask> getViewAddTask() const;
 
+    std::shared_ptr<view::operation::SelectUser> getViewSelectUser() const;
+
+    std::shared_ptr<view::operation::SelectTask> getViewSelectTask() const;
+
 private:
     void initOperationViews();
 
@@ -27,7 +33,8 @@ private:
     std::shared_ptr<view::operation::SelectFamilyUnit> mViewSelectFamilyUnit;
     std::shared_ptr<view::operation::AddUser> mViewAddUser;
     std::shared_ptr<view::operation::AddTask> mViewAddTask;
-
+    std::shared_ptr<view::operation::SelectUser> mViewSelectUser;
+    std::shared_ptr<view::operation::SelectTask> mViewSelectTask;
 };
 
 } // namespace view
