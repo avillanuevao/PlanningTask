@@ -13,9 +13,10 @@ RowLayout
         {
             id: familyUnitBox
             model: showFamilyUnit.familiesUnits
+            visible: true
 
-            onActivated: {
-                selectFamilyUnit.selectFamilyUnit(currentText);
+            onCurrentTextChanged: {
+                selectFamilyUnit.selectFamilyUnit(currentText)
             }
         }
 
@@ -47,6 +48,7 @@ RowLayout
         {
             id: operationsButton
             text: "Operate"
+            visible: Qt.application.isUserFull && Qt.application.isTaskFull
             onClicked:
             {
                 manageFamilyUnitScreen.visible = false

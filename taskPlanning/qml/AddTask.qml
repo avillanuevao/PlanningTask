@@ -20,6 +20,8 @@ ColumnLayout
         onClicked:
         {
             addTask.addTask(addTaskTextField.text)
+            Qt.application.isTaskFull = true
+
         }
     }
 
@@ -29,7 +31,7 @@ ColumnLayout
         text: "GoBack"
         onClicked:
         {
-            addFamilyUnitScreen.visible = true
+            manageFamilyUnitScreen.visible = true
             addTaskScreen.visible = false
         }
     }

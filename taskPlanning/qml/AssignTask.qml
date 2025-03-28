@@ -12,8 +12,8 @@ ColumnLayout
         id: userBox
         model: showUser.users
 
-        onActivated: {
-            console.log("Seleccionado:", currentText)
+        onCurrentTextChanged: {
+            console.log("Seleccionado userBox:", currentText)
         }
     }
 
@@ -22,8 +22,8 @@ ColumnLayout
         id: taskBox
         model: showTask.tasks
 
-        onActivated: {
-            console.log("Seleccionado:", currentText)
+        onCurrentTextChanged: {
+            console.log("Seleccionado taskBox:", currentText)
         }
     }
 

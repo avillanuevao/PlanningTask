@@ -10,6 +10,13 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
+    Component.onCompleted:
+    {
+        Qt.application.isUserFull = false;
+        Qt.application.isTaskFull = false;
+    }
+
+
     RowLayout
     {
         ColumnLayout
@@ -33,7 +40,7 @@ Window {
                 {
                     id: manageFamilyUnitButton
                     text: "ManageFamilyUnit"
-                    visible: true
+                    visible: false
                     onClicked:
                     {
                         manageFamilyUnitScreen.visible = true

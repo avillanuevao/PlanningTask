@@ -20,8 +20,8 @@ ColumnLayout
         visible: true
         onClicked:
         {
-            console.log(addUserTextField.text)
             addUser.addUser(addUserTextField.text)
+            Qt.application.isUserFull = true
         }
     }
 
@@ -32,7 +32,7 @@ ColumnLayout
         visible: true
         onClicked:
         {
-            addFamilyUnitScreen.visible = true
+            manageFamilyUnitScreen.visible = true
             addUserScreen.visible = false
         }
     }

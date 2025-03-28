@@ -23,6 +23,7 @@ RowLayout
             onClicked:
             {
                 registerFamilyUnit.registerFamilyUnit(addFamilyUnitTextField.text)
+                manageFamilyUnitButton.visible = true
             }
         }
 
