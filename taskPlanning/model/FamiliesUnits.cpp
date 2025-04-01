@@ -1,6 +1,10 @@
 #include "FamiliesUnits.hpp"
 
 #include <model/FamilyUnit.hpp>
+#include <model/IUsers.hpp>
+#include <model/ITasks.hpp>
+#include <model/Users.hpp>
+#include <model/Tasks.hpp>
 
 namespace model {
 
@@ -15,6 +19,24 @@ void FamiliesUnits::registerFamilyUnit(std::string nameFamilyUnit)
 
         notifyAddedFamilyUnit(nameFamilyUnit);
     }
+}
+
+void FamiliesUnits::addUser(std::string nameUser)
+{
+    std::shared_ptr<model::IUsers> users = mFamiliesUnits[mFamilyUnitSelected]->getUsers();
+    users->addUser(nameUser);
+
+    model::signal::AddedUser signal(nameUser);
+    this->utils::Publisher<model::signal::AddedUser>::notifySubscribers(signal);
+}
+
+void FamiliesUnits::addTask(std::string nameTask)
+{
+    std::shared_ptr<model::ITasks> tasks = mFamiliesUnits[mFamilyUnitSelected]->getTasks();
+    tasks->addTask(nameTask);
+
+    model::signal::AddedTask signal(nameTask);
+    this->utils::Publisher<model::signal::AddedTask>::notifySubscribers(signal);
 }
 
 void FamiliesUnits::setFamilyUnitSelected(std::string familyUnitSelected)
@@ -42,7 +64,9 @@ void FamiliesUnits::setTaskSelected(std::string taskSelected)
 
 void model::FamiliesUnits::addFamilyUnit(std::string nameFamilyUnit)
 {
-    std::shared_ptr<model::IFamilyUnit> newFamilyUnit = std::make_shared<model::FamilyUnit>(nameFamilyUnit);
+    std::shared_ptr<model::IUsers> newUsers = std::make_shared<model::Users>();
+    std::shared_ptr<model::ITasks> newTasks = std::make_shared<model::Tasks>();
+    std::shared_ptr<model::IFamilyUnit> newFamilyUnit = std::make_shared<model::FamilyUnit>(nameFamilyUnit, newUsers, newTasks);
 
     mFamiliesUnits[nameFamilyUnit] = newFamilyUnit;
 }
@@ -50,7 +74,7 @@ void model::FamiliesUnits::addFamilyUnit(std::string nameFamilyUnit)
 void model::FamiliesUnits::notifyAddedFamilyUnit(std::string nameFamilyUnit)
 {
     model::signal::AddedFamilyUnit signal(nameFamilyUnit);
-    notifySubscribers(signal);
+    this->utils::Publisher<model::signal::AddedFamilyUnit>::notifySubscribers(signal);
 }
 
 } // namespace model

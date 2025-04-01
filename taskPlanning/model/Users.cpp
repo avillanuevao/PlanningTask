@@ -14,9 +14,6 @@ void Users::addUser(std::string nameUser)
     {
         std::shared_ptr<model::IUser> newUser = std::make_shared<model::User>(nameUser);
         mUsers[nameUser] = newUser;
-
-        model::signal::AddedUser signal(nameUser);
-        notifySubscribers(signal);
     }
 }
 

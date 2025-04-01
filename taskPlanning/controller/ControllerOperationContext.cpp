@@ -32,8 +32,8 @@ void ControllerOperationContext::initOperationControllers()
 {
     mControllerRegisterFamilyUnit = std::make_shared<controller::operation::RegisterFamilyUnit>(mModelContext->getModelFamiliesUnits());
     mControllerSelectFamilyUnit = std::make_shared<controller::operation::SelectFamilyUnit>(mModelContext->getModelFamiliesUnits());
-    mControllerAddUser = std::make_shared<controller::operation::AddUser>(mModelContext->getModelUsers());
-    mControllerAddTask = std::make_shared<controller::operation::AddTask>(mModelContext->getModelTasks());
+    mControllerAddUser = std::make_shared<controller::operation::AddUser>(mModelContext->getModelFamiliesUnits());
+    mControllerAddTask = std::make_shared<controller::operation::AddTask>(mModelContext->getModelFamiliesUnits());
     mControllerSelectUser = std::make_shared<controller::operation::SelectUser>(mModelContext->getModelFamiliesUnits());
     mControllerSelectTask = std::make_shared<controller::operation::SelectTask>(mModelContext->getModelFamiliesUnits());
 }

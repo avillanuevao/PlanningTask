@@ -1,5 +1,9 @@
 #include "ControllerVisualizationContext.hpp"
 
+#include <model/signal/AddedUser.hpp>
+#include <model/signal/AddedTask.hpp>
+#include <model/signal/AddedFamilyUnit.hpp>
+
 namespace controller {
 
 ControllerVisualizationContext::ControllerVisualizationContext(std::shared_ptr<model::ModelContext> modelContext)
@@ -18,9 +22,14 @@ void ControllerVisualizationContext::initVisualizationControllers()
 
 void ControllerVisualizationContext::initVisualizationRelations()
 {
-    mModelContext->getModelFamiliesUnits()->addSubscriber(mControllerShowFamilyUnit);
-    mModelContext->getModelUsers()->addSubscriber(mControllerShowUser);
-    mModelContext->getModelTasks()->addSubscriber(mControllerShowTask);
+    mModelContext->getModelFamiliesUnits()
+        ->utils::Publisher<model::signal::AddedFamilyUnit>::addSubscriber(mControllerShowFamilyUnit);
+
+    mModelContext->getModelFamiliesUnits()
+        ->utils::Publisher<model::signal::AddedUser>::addSubscriber(mControllerShowUser);
+
+    mModelContext->getModelFamiliesUnits()
+        ->utils::Publisher<model::signal::AddedTask>::addSubscriber(mControllerShowTask);
 }
 
 std::shared_ptr<controller::visualization::ShowFamilyUnit> ControllerVisualizationContext::getControllerShowFamilyUnit() const

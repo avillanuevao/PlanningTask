@@ -3,13 +3,13 @@
 namespace controller {
 namespace operation {
 
-AddTask::AddTask(std::shared_ptr<model::ITasks> modelTasks)
-    : mModelTasks(modelTasks)
+AddTask::AddTask(std::shared_ptr<model::IFamiliesUnits> modelFamiliesUnits)
+    : mModelFamiliesUnits(modelFamiliesUnits)
 {}
 
 void AddTask::addTask(std::string nameTask)
 {
-    mModelTasks->addTask(nameTask);
+    mModelFamiliesUnits->addTask(nameTask);
 }
 
 } // namespace operation

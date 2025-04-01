@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string>
+#include <map>
 
 #include <model/IUser.hpp>
 
@@ -11,8 +11,11 @@ class User : public model::IUser
 public:
     User(std::string name);
 
+    // void assignTask(std::string nameTask, std::shared_ptr<model::ITask> task) override;
+
 private:
     std::string mName;
+    // std::map<std::string, std::shared_ptr<model::ITask> mTasks;
 };
 
 } // namespace model

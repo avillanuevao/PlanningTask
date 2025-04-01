@@ -2,12 +2,9 @@
 
 #include <string>
 
-#include <utils/Publisher.hpp>
-#include <model/signal/AddedTask.hpp>
-
 namespace model {
 
-class ITasks : public utils::Publisher<model::signal::AddedTask>
+class ITasks
 {
 public:
     ITasks() = default;

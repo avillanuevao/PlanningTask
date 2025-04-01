@@ -3,13 +3,13 @@
 namespace controller {
 namespace operation {
 
-AddUser::AddUser(std::shared_ptr<model::IUsers> modelUsers)
-    : mModelUsers(modelUsers)
+AddUser::AddUser(std::shared_ptr<model::IFamiliesUnits> modelFamiliesUnits)
+    : mModelFamiliesUnits(modelFamiliesUnits)
 {}
 
 void AddUser::addUser(std::string nameUser)
 {
-    mModelUsers->addUser(nameUser);
+    mModelFamiliesUnits->addUser(nameUser);
 }
 
 } // namespace operation

@@ -14,9 +14,6 @@ void Tasks::addTask(std::string nameTask)
     {
         std::shared_ptr<model::ITask> newTask = std::make_shared<model::Task>(nameTask);
         mTasks[nameTask] = newTask;
-
-        model::signal::AddedTask signal(nameTask);
-        notifySubscribers(signal);
     }
 }
 
