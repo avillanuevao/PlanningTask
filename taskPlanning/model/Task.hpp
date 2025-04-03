@@ -11,6 +11,8 @@ class Task : public model::ITask
 public:
     Task(std::string name);
 
+    std::string getName() const override;
+
 private:
     std::string mName;
 };

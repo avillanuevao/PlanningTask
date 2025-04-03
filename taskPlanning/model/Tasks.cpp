@@ -17,4 +17,10 @@ void Tasks::addTask(std::string nameTask)
     }
 }
 
+std::shared_ptr<ITask> Tasks::getTask(std::string nameTask)
+{
+    return mTasks[nameTask];
+}
+
+
 } // namespace model

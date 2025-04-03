@@ -20,6 +20,8 @@ public:
     std::shared_ptr<model::IUsers> getUsers() const override;
     std::shared_ptr<model::ITasks> getTasks() const override;
 
+    void assignTask() override;
+
 private:
     std::string mNameFamilyUnit;
     std::string mUserSelected;

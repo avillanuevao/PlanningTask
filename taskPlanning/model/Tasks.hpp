@@ -1,10 +1,8 @@
 #pragma once
 
 #include <map>
-#include <memory>
 
 #include <model/ITasks.hpp>
-#include <model/ITask.hpp>
 
 namespace model {
 
@@ -14,6 +12,7 @@ public:
     Tasks();
 
     void addTask(std::string nameTask) override;
+    std::shared_ptr<model::ITask> getTask(std::string nameTask) override;
 
 private:
     std::map<std::string, std::shared_ptr<model::ITask>> mTasks;

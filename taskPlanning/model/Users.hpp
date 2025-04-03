@@ -2,10 +2,8 @@
 
 #include <map>
 #include <string>
-#include <memory>
 
 #include <model/IUsers.hpp>
-#include <model/IUser.hpp>
 
 namespace model {
 
@@ -15,6 +13,7 @@ public:
     Users();
 
     void addUser(std::string nameUser) override;
+    std::shared_ptr<model::IUser> getUser(std::string nameUser) override;
 
 private:
     std::map<std::string, std::shared_ptr<model::IUser>> mUsers;

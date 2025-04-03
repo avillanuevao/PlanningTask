@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 
+
 ColumnLayout
 {
     id: assignTaskScreen
@@ -31,10 +32,11 @@ ColumnLayout
 
     Button
     {
-        id: assignTask
+        id: assignTaskButton
         text: "AssignTask"
         onClicked:
         {
+            assignTask.assignTask()
         }
     }
 

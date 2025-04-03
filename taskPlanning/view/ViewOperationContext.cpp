@@ -36,6 +36,12 @@ void ViewOperationContext::initOperationViews()
     mViewAddTask = std::make_shared<view::operation::AddTask>(mControllerOperationContext->getControllerAddTask());
     mViewSelectUser = std::make_shared<view::operation::SelectUser>(mControllerOperationContext->getControllerSelectUser());
     mViewSelectTask = std::make_shared<view::operation::SelectTask>(mControllerOperationContext->getControllerSelectTask());
+    mViewAssignTask = std::make_shared<view::operation::AssignTask>(mControllerOperationContext->getControllerAssignTask());
+}
+
+std::shared_ptr<view::operation::AssignTask> ViewOperationContext::getViewAssignTask() const
+{
+    return mViewAssignTask;
 }
 
 std::shared_ptr<view::operation::SelectTask> ViewOperationContext::getViewSelectTask() const

@@ -38,4 +38,14 @@ std::shared_ptr<model::ITasks> FamilyUnit::getTasks() const
     return mTasks;
 }
 
+void FamilyUnit::assignTask()
+{
+    std::shared_ptr<model::IUser> user = mUsers->getUser(mUserSelected);
+    std::shared_ptr<model::ITask> task = mTasks->getTask(mTaskSelected);
+    std::string nameTask = task->getName();
+
+    user->assignTask(nameTask, task);
+
+}
+
 } // namespace model

@@ -17,4 +17,9 @@ void Users::addUser(std::string nameUser)
     }
 }
 
+std::shared_ptr<IUser> Users::getUser(std::string nameUser)
+{
+    return mUsers[nameUser];
+}
+
 } // namespace model

@@ -6,6 +6,8 @@
 #include <controller/operation/AddTask.hpp>
 #include <controller/operation/SelectUser.hpp>
 #include <controller/operation/SelectTask.hpp>
+#include <controller/operation/AssignTask.hpp>
+
 #include <model/ModelContext.hpp>
 
 namespace controller {
@@ -20,8 +22,8 @@ public:
     std::shared_ptr<controller::operation::AddUser> getControllerAddUser() const;
     std::shared_ptr<controller::operation::AddTask> getControllerAddTask() const;
     std::shared_ptr<controller::operation::SelectUser> getControllerSelectUser() const;
-
     std::shared_ptr<controller::operation::SelectTask> getControllerSelectTask() const;
+    std::shared_ptr<controller::operation::AssignTask> getControllerAssignTask() const;
 
 private:
     void initOperationControllers();
@@ -34,6 +36,7 @@ private:
     std::shared_ptr<controller::operation::AddTask> mControllerAddTask;
     std::shared_ptr<controller::operation::SelectUser> mControllerSelectUser;
     std::shared_ptr<controller::operation::SelectTask> mControllerSelectTask;
+    std::shared_ptr<controller::operation::AssignTask> mControllerAssignTask;
 };
 
 } // namespace controller

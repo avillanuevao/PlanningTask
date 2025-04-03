@@ -62,6 +62,12 @@ void FamiliesUnits::setTaskSelected(std::string taskSelected)
     familyUnitSelected->setTaskSelected(taskSelected);
 }
 
+void FamiliesUnits::assignTask()
+{
+    std::shared_ptr<model::IFamilyUnit> familyUnitSelected = mFamiliesUnits[mFamilyUnitSelected];
+    familyUnitSelected->assignTask();
+}
+
 void model::FamiliesUnits::addFamilyUnit(std::string nameFamilyUnit)
 {
     std::shared_ptr<model::IUsers> newUsers = std::make_shared<model::Users>();

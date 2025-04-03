@@ -12,7 +12,7 @@ class IUser
 public:
     IUser() = default;
 
-    // virtual void assignTask(std::string nameTask, std::shared_ptr<model::ITask> task) = 0;
+    virtual void assignTask(std::string nameTask, std::shared_ptr<model::ITask> task) = 0;
 };
 
 } // namespace model

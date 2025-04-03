@@ -19,6 +19,7 @@ public:
     void setFamilyUnitSelected(std::string familyUnitSelected) override;
     void setUserSelected(std::string userSelected) override;
     void setTaskSelected(std::string taskSelected) override;
+    void assignTask() override;
 
 private:
     void addFamilyUnit(std::string nameFamilyUnit);

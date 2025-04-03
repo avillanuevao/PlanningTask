@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("addTask", applicationContext.getViewOperationContext()->getViewAddTask().get());
     engine.rootContext()->setContextProperty("selectUser", applicationContext.getViewOperationContext()->getViewSelectUser().get());
     engine.rootContext()->setContextProperty("selectTask", applicationContext.getViewOperationContext()->getViewSelectTask().get());
+    engine.rootContext()->setContextProperty("assignTask", applicationContext.getViewOperationContext()->getViewAssignTask().get());
 
     engine.rootContext()->setContextProperty("showFamilyUnit", applicationContext.getViewVisualizationContext()->getViewShowFamilyUnit().get());
     engine.rootContext()->setContextProperty("showTask", applicationContext.getViewVisualizationContext()->getViewShowTask().get());

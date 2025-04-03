@@ -6,9 +6,9 @@ User::User(std::string name)
     : mName(name)
 {}
 
-// void User::assignTask(std::string nameTask, std::shared_ptr<ITask> task)
-// {
-//     mTasks[nameTask] = task;
-// }
+void User::assignTask(std::string nameTask, std::shared_ptr<ITask> task)
+{
+    mTasks[nameTask] = task;
+}
 
 } // namespace model

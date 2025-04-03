@@ -19,6 +19,7 @@ public:
     virtual std::string getTaskSelected() const = 0;
     virtual std::shared_ptr<model::IUsers> getUsers() const = 0;
     virtual std::shared_ptr<model::ITasks> getTasks() const = 0;
+    virtual void assignTask() = 0;
 
 };
 
